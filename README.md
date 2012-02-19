@@ -10,6 +10,6 @@ Add this to your `Gemfile`:
 
     gem "capi"
 
-## Capify
+## Capfile
 
-require 'capi/unicorn'
+    require 'capi/unicorn'
