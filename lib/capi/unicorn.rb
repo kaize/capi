@@ -8,7 +8,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
     desc 'unicorn stop'
     task :stop do
-      run "kill -9 `cat #{deploy_to}/shared/pids/unicorn.pid`"
+      run "kill -QUIT `cat #{deploy_to}/shared/pids/unicorn.pid`"
     end
 
     desc 'unicorn restart'
