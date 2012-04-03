@@ -1,5 +1,4 @@
 Capistrano::Configuration.instance(:must_exist).load do
-  after "deploy:restart", "unicorn:restart"
   namespace :unicorn do
     desc 'unicorn start'
     task :start do
