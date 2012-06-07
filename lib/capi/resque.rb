@@ -1,5 +1,4 @@
 Capistrano::Configuration.instance(:must_exist).load do
-  after "deploy:restart", "unicorn:restart"
   namespace :resque do
 
     desc 'resque stop'
