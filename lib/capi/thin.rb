@@ -8,7 +8,7 @@ Capistrano::Configuration.instance(:must_exist).load do
 
     desc 'thin stop'
     task :stop  do
-      run "kill -QUIT `cat #{deploy_to}/shared/pids/thin.pid`"
+      run "kill -QUIT `cat #{deploy_to}/shared/pids/thin.0.pid`"
     end
 
     desc 'thin restart'
