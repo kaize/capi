@@ -13,6 +13,8 @@ Add this to your `Gemfile`:
 ## Capfile
 
     require 'capi/unicorn'
+    require 'capi/resque'
+    require 'capi/thin'
 
 ## Using
 
