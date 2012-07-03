@@ -14,6 +14,7 @@ Add this to your `Gemfile`:
 
     require 'capi/unicorn'
     require 'capi/resque'
+    require 'capi/capi'
 
 ## Using
 
