@@ -15,5 +15,9 @@ Capistrano::Configuration.instance(:must_exist).load do
       stop rescue nil
       start
     end
+    desc 'unicorn class reload'
+    task :class_reload
+      run "kill -HUP `cat #{deploy_to}/shared/pids/unicorn.pid`"
+    end
   end
 end
