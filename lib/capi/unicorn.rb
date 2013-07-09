@@ -2,12 +2,14 @@ Capistrano::Configuration.instance(:must_exist).load do
   namespace :unicorn do
     desc 'unicorn start'
     task :start do
-      run "cd #{deploy_to}/current && bundle exec unicorn_rails -c #{deploy_to}/current/config/unicorn.rb -E #{rails_env} -D"
+      config_path = unicorn_config || "#{deploy_to}/current/config/unicorn.rb"
+      run "cd #{deploy_to}/current && bundle exec unicorn_rails -c #{config_path} -E #{rails_env} -D"
     end
 
     desc 'unicorn stop'
     task :stop do
-      run "kill -QUIT `cat #{deploy_to}/shared/pids/unicorn.pid`"
+      pid_file = unicorn_pid_file || "#{deploy_to}/shared/pids/unicorn.pid"
+      run "kill -QUIT `cat #{pid_file}`"
     end
 
     desc 'unicorn restart'
